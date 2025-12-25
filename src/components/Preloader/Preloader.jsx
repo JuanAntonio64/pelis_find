@@ -1,5 +1,13 @@
+import "./Preloader.css";
+
 function Preloader() {
-  return <h1>Preloader</h1>;
+  return (
+    <div className="preloader">
+      <div className="preloader__spinner">
+      </div>
+      <p className="preloader__text">Cargando</p>
+    </div>
+  );
 }
 
 export default Preloader;

@@ -1,7 +1,4 @@
-/* ===============================
-   CONTENEDOR PRINCIPAL
-================================= */
-
+/* Principal */
 .carousel {
   position: relative;
   width: 100vw;
@@ -9,9 +6,6 @@
   overflow: hidden;
 }
 
-/* ===============================
-   TRACK HORIZONTAL
-================================= */
 
 .carousel__track {
   display: flex;
@@ -30,9 +24,6 @@
   scrollbar-width: none;
 }
 
-/* ===============================
-   SLIDE
-================================= */
 
 .carousel__slide {
   min-width: 100vw;
@@ -44,9 +35,6 @@
   position: relative;
 }
 
-/* ===============================
-   OVERLAY
-================================= */
 
 .carousel__overlay {
   position: absolute;
@@ -74,28 +62,20 @@
   color: #e0e0e0;
 }
 
-/* ===============================
-   NAVEGACIÓN LATERAL (FLECHAS)
-================================= */
-
 .carousel__nav {
   position: absolute;
   top: 0;
   height: 100%;
   width: 88px;
   z-index: 10;
-
   background: transparent;
   border: none;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: white;
   font-size: 4rem;
-
   opacity: 0;
   transition: opacity 0.3s ease, background 0.3s ease;
 }
@@ -108,21 +88,13 @@
 /* Izquierda */
 .carousel__nav--left {
   left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0)
-  );
+  background: linear-gradient(to right,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0));
 }
 
 /* Derecha */
 .carousel__nav--right {
   right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0)
-  );
+  background: linear-gradient(to left,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0));
 }
 
 /* Flecha */
@@ -144,7 +116,6 @@
 }
 
 /* parte responsiva */
-
 @media (max-width: 768px) {
   .carousel {
     height: 75vh;
