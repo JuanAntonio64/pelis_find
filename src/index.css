@@ -33,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-/* Botones base */
+/* Botones */
 button {
   font-family: inherit;
   background: none;
@@ -47,17 +47,14 @@ button:focus-visible {
   outline: none;
 }
 
-/* Layout principal */
 main {
   width: 100%;
 }
 
-/* Secciones */
 main section {
   margin-bottom: 72px;
 }
 
-/* Scrollbar dark (opcional, pero elegante) */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -73,4 +70,26 @@ main section {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #444;
+}
+
+.show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.show-more button {
+  padding: 12px 32px;
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.show-more button:hover {
+  background: #3a3a3a;
+  transform: translateY(-2px);
 }

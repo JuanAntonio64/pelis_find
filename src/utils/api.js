@@ -1,43 +1,90 @@
-import axios from "axios";
-
+const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const LANGUAGE = "es-ES";
 
-const api = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
-  headers: {
-    Authorization: `Bearer ${API_KEY}`,
-    "Content-Type": "application/json",
-  },
-  params: {
-    language: "es-ES",
-  },
-});
+const checkResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error ${res.status}`);
+};
 
-//Películas para el carrusel
+// Peliculas para el carrusel
 export const getTrendingMovies = () => {
-  return api.get("/trending/movie/week");
+  return fetch(
+    `${BASE_URL}/trending/movie/week?language=${LANGUAGE}`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then(checkResponse);
 };
 
-//Películas para el grid
+// Peliculas para el grid
 export const getPopularMovies = (page = 1) => {
-  return api.get("/movie/popular", {
-    params: { page },
-  });
+  return fetch(
+    `${BASE_URL}/movie/popular?language=${LANGUAGE}&page=${page}`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then(checkResponse);
 };
 
-//Detalles de una película
+// Detalles de una pelicula
 export const getMovieDetails = (movieId) => {
-  return api.get(`/movie/${movieId}`);
+  return fetch(
+    `${BASE_URL}/movie/${movieId}?language=${LANGUAGE}`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then(checkResponse);
 };
 
-//Reparto
+// Reparto
 export const getMovieCredits = (movieId) => {
-  return api.get(`/movie/${movieId}/credits`);
+  return fetch(
+    `${BASE_URL}/movie/${movieId}/credits?language=${LANGUAGE}`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then(checkResponse);
 };
 
-//Trailers
+// Trailers
 export const getMovieVideos = (movieId) => {
-  return api.get(`/movie/${movieId}/videos`);
+  return fetch(
+    `${BASE_URL}/movie/${movieId}/videos?language=${LANGUAGE}`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then(checkResponse);
 };
 
-export default api;
+// Buscar peliculas
+export const searchMovies = (query, page = 1) => {
+  return fetch(
+    `${BASE_URL}/search/movie?language=${LANGUAGE}&query=${encodeURIComponent(
+      query
+    )}&page=${page}&include_adult=false`,
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    }
+  ).then(checkResponse);
+};
