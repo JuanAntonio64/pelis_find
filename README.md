@@ -1,18 +1,27 @@
-# React + Vite
+🎬 Pelis Find
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pelis Find es una aplicación web desarrollada con React + Vite que permite buscar, explorar y ver informacion de tus peliculas favoritas usando la API de The Movie Database (TMDB).
+Incluye búsqueda en tiempo real, vista de detalle, trailer, reparto entre otras, lo desplegue en produccion usando vercel.
 
-Currently, two official plugins are available:
+Proyecto en producción
+https://my-repository-pelis-find-jyuaeunyp.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---Caracteristicas---
+Búsqueda de películas por nombre
+Vista de detalle de cada película
+Tráiler embebido desde YouTube
+Reparto principal
+Skeleton loaders y preloader
+Diseño responsive
+Build rápido con Vite
+Deploy automático en Vercel
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---Tecnologias utilizadas---
+React 18
+Vite
+React Router DOM
+Fetch API
+TMDB API
+CSS modular
+Vercel (Producción)
