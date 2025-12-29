@@ -4,7 +4,6 @@
   background-color: #0d0d0d;
 }
 
-/* Wrapper opcional si luego lo necesitas */
 .app {
   display: flex;
   flex-direction: column;
